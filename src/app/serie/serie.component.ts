@@ -12,6 +12,7 @@ import { dataSeries } from './dataSeries';
 export class SerieComponent implements OnInit {
 
   series: Array<Serie> = [];
+  promedio = 0;
   
   constructor(private serieService: SerieService) { }
   
@@ -19,6 +20,12 @@ export class SerieComponent implements OnInit {
   getSeries() {
     this.serieService.getSeries().subscribe(series => {
       this.series = series;  
+
+      let totalTemporadas=0;
+      for (let i = 0; i < series.length; i++) {
+        totalTemporadas += series[i].seasons;
+      }
+      this.promedio = totalTemporadas/series.length;
     });
   }
   
