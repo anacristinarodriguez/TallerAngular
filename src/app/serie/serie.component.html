@@ -3,16 +3,16 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="h4">#</th>
-          <th class="h4">Name</th>
-          <th class="h4">Channel</th>
-          <th class="h4">Seasons</th>
+          <th>#</th>
+          <th>Name</th>
+          <th>Channel</th>
+          <th>Seasons</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-light">
         <tr *ngFor="let s of series">
           <td>
-            <dd>{{s.id}}</dd>
+            {{s.id}}
           </td>
           <td>
             <dd>{{s.name}}</dd>
